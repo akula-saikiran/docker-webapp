@@ -1,0 +1,13 @@
+---
+services:
+  devopsdb:
+    image: saikiran0302/myrepo:dbimage
+    ports:
+      - "3306:3306"
+      
+  application:
+    image: saikiran0302/myrepo:appimage
+    ports:
+      - "1234:8080"
+    depends_on:
+      - "devopsdb"
